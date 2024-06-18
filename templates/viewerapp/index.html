@@ -77,11 +77,15 @@
 
       <div class="header-social-links">
         
-        <a style="margin-right: 30px;" onclick="toggleTheme()"> <i id="theme-icon" class="bi bi-brightness-alt-high-fill"></i> </a>
+        <a href="#" style="margin-right: 30px;" onclick="toggleTheme()" > <i id="theme-icon" class="bi bi-brightness-alt-high-fill"></i> </a>
         <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        
+        <a href="{% url 'login' %}" style="margin-left: 30px;" data-toggle="tooltip" data-placement="top" title="Admin Login" >  <i class="bi bi-person-check"></i> </a>
+        
+       
       </div>
 
     </div>

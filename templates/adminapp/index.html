@@ -131,64 +131,59 @@
     <section class="section dashboard p-0">
       {% block content %}
 <div class="container mt-5">
-    <div class="jumbotron text-center">
-        <h1 class="display-4">Welcome to JALDHI Task Manager!</h1>
-        <p class="lead">Jaldhi Task Manager is your go-to solution for organizing, tracking, and managing your tasks efficiently.</p>
+    <div class="text-center">
+        <h2 class="display-4">Welcome Username</h2>
+      
         <hr class="my-4">
-        <p>With Jaldhi Task Manager, you can easily add new tasks, mark them as completed, and keep track of your progress.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        <p>This admin panel is designed to Manage your profile, Update your PhotoFolio details , and to update your latest projects with Photofolio</p>
+        <p><small>Kindly Contact Developer for any queries</small></p>
+        <a class="btn btn-outline-danger btn-sm " href="#" role="button">Get Help</a>
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <img src="{% static 'admin/assets/img/add_task.png' %}" class="card-img-top" alt="Add Task">
                 <div class="card-body">
-                    <h5 class="card-title">Add Tasks</h5>
-                    <p class="card-text">Create new tasks and set deadlines to stay on top of your work.</p>
-                    <a href="#" class="btn btn-secondary">Add Task</a>
+                    <h5 class="card-title">Manage Profile</h5>
+                    <p class="card-text">Customize your profile information and update your details</p>
+                    <a href="#" class="btn btn-secondary">Edit Profile</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
-                <img src="{% static 'assets/img/pending_tasks.png' %}" class="card-img-top" alt="Pending Tasks">
+                <img src="{% static 'admin/assets/img/completed_tasks.png' %}" class="card-img-top" alt="Pending Tasks">
                 <div class="card-body">
-                    <h5 class="card-title">Pending Tasks</h5>
-                    <p class="card-text">View all your pending tasks and prioritize them accordingly.</p>
-                    <a href="#" class="btn btn-secondary">View Pending Tasks</a>
+                    <h5 class="card-title">Update your PhotoFolio details</h5>
+                    <p class="card-text">Customize all your Heading , Paragraph </p>
+                    <a href="#" class="btn btn-secondary">Edit PhotoFolio</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3 ">
             <div class="card">
-                <img src="{% static 'assets/img/completed_tasks.png' %}" class="card-img-top" alt="Completed Tasks">
+                <img src="{% static 'admin/assets/img/pending_tasks.png' %}" class="card-img-top" alt="Completed Tasks">
                 <div class="card-body">
-                    <h5 class="card-title">Completed Tasks</h5>
-                    <p class="card-text">Keep track of all your completed tasks and monitor your progress.</p>
-                    <a href="#" class="btn btn-secondary">View Completed Tasks</a>
+                    <h5 class="card-title">Add new project</h5>
+                    <p class="card-text">>Showcase your lastest work with detailed descriptions, images, and links</p>
+                    <a href="#" class="btn btn-secondary">Add Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="card">
+                <img src="{% static 'admin/assets/img/remove.png' %}" class="card-img-top" alt="Completed Tasks">
+                <div class="card-body">
+                    <h5 class="card-title">Remove  project</h5>
+                    <p class="card-text">>Remove your previous works</p>
+                    <a href="#" class="btn btn-secondary">Remove Project</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Features</h3>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">Easy task creation and management</li>
-                        <li class="list-group-item">Mark tasks as completed or pending</li>
-                        <li class="list-group-item">View detailed task information</li>
-                        <li class="list-group-item">User-friendly interface</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 {% endblock %}
     </section>
@@ -199,7 +194,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 text-lg-start text-center">
-          <p>&copy; 2024 JALDHI TASK MANAGER. All Rights Reserved.</p>
+          <p>&copy; PHOTOFOOLIO. All Rights Reserved.</p>
         </div>
       </div>
     </div>

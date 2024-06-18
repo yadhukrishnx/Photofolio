@@ -1,20 +1,13 @@
-/**
-* Template Name: PhotoFolio
-* Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-* Updated: Jun 06 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 
 
-let darkmode = false;
-function toggleTheme() {
-  
+// Function to apply the theme based on the given mode
+function applyTheme(mode) {
   const root=document.documentElement;
   const themeIcon = document.getElementById('theme-icon');
- 
-  if(darkmode){
+  const mobilenav= document.getElementById('mobile-nav-toggle');
+  if ( mode === 'dark' ) {
+   
     root.style.setProperty('--background-color', '#ffffff'); 
     root.style.setProperty('--default-color', '#000000'); 
     root.style.setProperty('--heading-color', '#000000');
@@ -23,7 +16,11 @@ function toggleTheme() {
     // Change icon to indicate light mode
     themeIcon.classList.remove('bi-brightness-alt-high-fill');
     themeIcon.classList.add('bi-moon-fill');
-  }else{
+    mobilenav.classList.add('text-dark');
+    
+  } 
+  else {
+
     root.style.setProperty('--background-color', '#000000'); 
     root.style.setProperty('--default-color', '#fafafa'); 
     root.style.setProperty('--heading-color', '#ffffff');
@@ -32,10 +29,36 @@ function toggleTheme() {
     // Change icon to indicate dark mode
     themeIcon.classList.remove('bi-moon-fill');
     themeIcon.classList.add('bi-brightness-alt-high-fill');
+    mobilenav.classList.remove('text-dark');
+    
   }
-  darkmode = !darkmode;
 }
-  
+
+// Function to toggle the theme
+
+
+// Check the saved theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+
+  applyTheme(savedTheme);
+
+
+});
+
+function themetoggle() {
+  let currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'dark') {
+      localStorage.setItem('theme', 'light');
+      applyTheme('light');
+  } 
+  else {
+      localStorage.setItem('theme', 'dark');
+      applyTheme('dark');
+  }
+}
+
 
 
 
@@ -145,7 +168,7 @@ function toggleTheme() {
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
+  const glightbox = glightbox({
     selector: '.glightbox'
   });
 

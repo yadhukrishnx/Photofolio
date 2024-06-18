@@ -95,9 +95,9 @@
       {% endblock %}
         {% block content1 %}
       <!-- Your dynamic content goes here -->
-      <a class="nav-link collapsed" href="#">
+      <a class="nav-link collapsed" href="{% url 'editprofile' %}">
         <i class="bi bi-plus-circle"></i>
-        <span>Add Task</span>
+        <span>Edit Profile</span>
       </a>
       {% endblock %}
         
@@ -105,9 +105,9 @@
       <li class="nav-item">
         {% block content2 %}
       <!-- Your dynamic content goes here -->
-      <a class="nav-link collapsed" href="#">
+      <a class="nav-link collapsed" href="{% url 'editphotofolio' %}">
         <i class="bi bi-hourglass-split"></i>
-        <span>Pending Tasks</span>
+        <span>Edit Photofolio</span>
       </a>
       {% endblock %}
        
@@ -133,8 +133,18 @@
 <div class="container mt-5">
     <div class="text-center">
         <h2 class="display-4">Welcome Username</h2>
+
       
         <hr class="my-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <h4></h4>
         <p>This admin panel is designed to Manage your profile, Update your PhotoFolio details , and to update your latest projects with Photofolio</p>
         <p><small>Kindly Contact Developer for any queries</small></p>
         <a class="btn btn-outline-danger btn-sm " href="#" role="button">Get Help</a>
@@ -147,7 +157,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Manage Profile</h5>
                     <p class="card-text">Customize your profile information and update your details</p>
-                    <a href="#" class="btn btn-secondary">Edit Profile</a>
+                    <a href="{% url 'editprofile' %}" class="btn btn-secondary">Edit Profile</a>
                 </div>
             </div>
         </div>

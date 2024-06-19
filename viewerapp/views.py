@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from adminapp.models import UserDetails,ProfessionalExperience, Education,Projects
-# Create your views here.
+from adminapp.models import UserDetails,ProfessionalExperience, Education,Projects,Services
 
 def index(request):
     return render(request, 'viewerapp/index.html')
@@ -15,10 +14,12 @@ def gallery(request):
     return render(request, 'viewerapp/gallery.html',{'projects': projects})
 
 def services(request):
-    return render(request, 'viewerapp/services.html')
+    services=Services.objects.all()
+    return render(request, 'viewerapp/services.html',{'services': services})
 
 def contact(request):
-    return render(request, 'viewerapp/contact.html')
+    userdetail = UserDetails.objects.first()
+    return render(request, 'viewerapp/contact.html',{'userdetail': userdetail})
 
 def gallery_single(request, id):    
     project = get_object_or_404(Projects, id=id)

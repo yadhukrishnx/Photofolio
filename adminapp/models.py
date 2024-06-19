@@ -55,3 +55,10 @@ class Projects(models.Model):
     def __str__(self):
         return f'{self.project_category} - {self.project_date}'
     
+class Services(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+    

@@ -9,6 +9,8 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('services/', views.services, name='services'),
     path('contact/', views.contact, name='contact'),
+    path('gallery-single/<int:id>/', views.gallery_single, name='gallery-single'),
+    
 ]
 
 if settings.DEBUG:

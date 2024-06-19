@@ -117,6 +117,13 @@
               <a href="{% url 'about' %}" id="btn-shine" class="btn btn-primary m-3">Know more about me</a>
               <a href="contact.html" class="btn btn-outline-info ">Available for Hire <br></a>
             </div>
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
           </div>
         </div>
       </div>

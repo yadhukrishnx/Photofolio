@@ -46,12 +46,13 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{% url 'index' %}" class="active">Home<br></a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'gallery' %}">Gallery</a></li>
           
-          <li><a href="{% url 'services' %}">Services</a></li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'index' %}" id="home">Home<br></a></li>
+          <li><a href="{% url 'about' %}" id="about">About</a></li>
+          <li><a href="{% url 'gallery' %}" id="gallery">Gallery</a></li>
+          
+          <li><a href="{% url 'services' %}" id="services">Services</a></li>
+          <li><a href="{% url 'contact' %}" id="contact">Contact</a></li>
          
         </ul>
         
@@ -75,6 +76,7 @@
   <main class="main">
 
     {% block content %}
+  
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
@@ -115,7 +117,7 @@
             <div class="mt-4 ">
               
               <a href="{% url 'about' %}" id="btn-shine" class="btn btn-primary m-3">Know more about me</a>
-              <a href="contact.html" class="btn btn-outline-info ">Available for Hire <br></a>
+              <a href="{% url 'contact' %}" class="btn btn-outline-info ">Available for Hire <br></a>
             </div>
             {% if messages %}
             {% for message in messages %}
@@ -130,6 +132,10 @@
 
     </section><!-- /Hero Section -->
 
+    <script>
+      var navitem = document.getElementById("home");
+      navitem.classList.add("active");
+    </script>
     {% endblock %}
 
   </main>

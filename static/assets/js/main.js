@@ -11,7 +11,7 @@ function applyTheme(mode) {
     root.style.setProperty('--background-color', '#ffffff'); 
     root.style.setProperty('--default-color', '#000000'); 
     root.style.setProperty('--heading-color', '#000000');
-    root.style.setProperty('--accent-color', '#01e4e4'); 
+    root.style.setProperty('--accent-color', '#288c6c'); 
     root.style.setProperty('--contrast-color', '#000000');
     // Change icon to indicate light mode
     themeIcon.classList.remove('bi-brightness-alt-high-fill');
@@ -24,7 +24,7 @@ function applyTheme(mode) {
     root.style.setProperty('--background-color', '#000000'); 
     root.style.setProperty('--default-color', '#fafafa'); 
     root.style.setProperty('--heading-color', '#ffffff');
-    root.style.setProperty('--accent-color', '#0c758d9f'); 
+    root.style.setProperty('--accent-color', '#0bb680'); 
     root.style.setProperty('--contrast-color', '#161718');
     // Change icon to indicate dark mode
     themeIcon.classList.remove('bi-moon-fill');

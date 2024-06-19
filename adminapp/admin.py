@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import UserDetails, ProfessionalExperience, Education,Projects
+from . models import UserDetails, ProfessionalExperience, Education,Projects,Services
 # Register your models here.
 
 @admin.register(UserDetails)
@@ -28,3 +28,10 @@ class ProjectsAdmin(admin.ModelAdmin):
     search_fields = ('project_category', 'client_name')
     list_filter = ('project_category', 'client_name', 'project_date')
     ordering = ('-project_date',)
+    
+@admin.register(Services)
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description')
+    search_fields = ('title',)
+    list_filter = ('title',)
+    ordering = ('title',)

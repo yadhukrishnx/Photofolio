@@ -21,26 +21,31 @@ def gallery(request):
 def services(request):
     services=Services.objects.all()
     return render(request, 'viewerapp/services.html',{'services': services})
-
 def contact(request):
     if request.method == 'POST':
+       
         name = request.POST.get('name')
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        message = message + "Mail sent by " + email + name
-        send_mail(
-            subject,
-            message,
-            email,
-            [settings.CONTACT_EMAIL],
-            fail_silently=False,
-        )
-        messages.success(request, 'Message sent successfully')
-        return redirect('index')
+       
+
+        full_message = f"{message}\n\nMail sent by {name} ({email})"
+        try:
+            send_mail(
+                subject,
+                full_message,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.CONTACT_EMAIL],
+                fail_silently=False,
+            )
+            messages.success(request, 'Message sent successfully')
+            return redirect(reverse_lazy('contact'))
+        except Exception as e:
+            messages.error(request, f'An error occurred: {e}')
     userdetail = UserDetails.objects.first()
-    return render(request, 'viewerapp/contact.html',{'userdetail': userdetail})
+    return render(request, 'viewerapp/contact.html', {'userdetail': userdetail})
 
 def gallery_single(request, id):    
     project = get_object_or_404(Projects, id=id)
